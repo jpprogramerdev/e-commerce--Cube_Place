@@ -1,9 +1,13 @@
 /*Fontes*/
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');/*font-family: 'Josefin Sans', sans-serif;*/
 
+body{
+    background-color: #02010E;
+}
+
 :root{
-    --text-menu:black;
-    --text-menu-hover:#bb0505;
+    --text-menu:#ff3770;
+    --text-menu-hover:#aa0030;
 }
 
 *{
@@ -41,5 +45,61 @@ header{
 
 .header .menu-header li a:hover{
     transition: .2s;
+}
+
+.menu-header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-header li {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.menu-header li a {
+    display: block;
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+    border-bottom: 1.5px solid transparent;
+    transition: .3s;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+.menu-header li.dropdown:hover .dropdown-content {
+    display: block;
+    animation: slide-down 0.3s ease-in-out forwards;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li a{
+    color: var(--text-menu);
+    display: block;
+}
+
+.dropdown-content li a:hover{
     color: var(--text-menu-hover);
+    text-decoration: none;
+    display: block;
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
