@@ -4,17 +4,36 @@
     padding: 0;
 }
 
-form{
+section{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid white
+}
+
+p.title-form{
+    color: var(--text);
+    padding-top: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+form{
+    margin-top: 1.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: #e8f0fe75 1px 0px 20px;
 }
 
 form label{
     color: var(--text);
-    padding-top: 25px;
+    margin-top: 25px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.2rem;
 }
@@ -35,13 +54,13 @@ button[type="submit"]{
     font-size: 1rem;
     color: var(--text);
     font-family: 'Josefin Sans', sans-serif;
-    background-color: #ffffff;
+    background-color: #E8F0FE;
     cursor: pointer;
     transition: .3s;
 }
 
 button[type="submit"]:hover{
     transition: .3s;
-    background-color: #e2e0e0;
+    background-color: #c9dbfa;
     color: var(--text-menu-hover);
 }

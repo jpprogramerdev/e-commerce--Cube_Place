@@ -38,7 +38,7 @@ header{
 .header .menu-header li a{
     font-family: 'Josefin Sans', sans-serif;
     text-decoration: none;
-    color: var(--text-menu);
+    color: var(--text);
     transition: .2s;
     font-size: 1.1rem;
 }
