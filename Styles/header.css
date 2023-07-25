@@ -6,7 +6,7 @@ body{
 }
 
 :root{
-    --text-menu:#ff3770;
+    --text:#ff3770;
     --text-menu-hover:#aa0030;
 }
 
@@ -88,7 +88,7 @@ li.dropdown a:hover{
 }
 
 .dropdown-content li a{
-    color: var(--text-menu);
+    color: var(--text);
     display: block;
 }
 
