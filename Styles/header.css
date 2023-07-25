@@ -68,6 +68,11 @@ header{
     padding: 10px;
 }
 
+li.dropdown a:hover{
+    color: var(--text-menu-hover);
+    transition: .3s;
+}
+
 .menu-header li.dropdown:hover .dropdown-content {
     display: block;
     animation: slide-down 0.3s ease-in-out forwards;

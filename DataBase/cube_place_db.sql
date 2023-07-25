@@ -1,0 +1,1 @@
+CREATE DATABASE cube_place_db;

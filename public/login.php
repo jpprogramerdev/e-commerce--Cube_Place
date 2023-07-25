@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cube Place</title>
-    <link rel="stylesheet" href="./Styles/header.css">
+    <link rel="stylesheet" href=".././Styles/header.css">
 </head>
 <body>
     <header class="header">
-        <a href="index.html"><img src="./Images/logo-example.png" alt="Logo"></a>
+        <a href="index.html"><img src=".././Images/logo-example.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="">Todos</a></li>
@@ -37,7 +37,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="">Acessórios</a>
+                    <a href="#">Acessórios</a>
                     <ul class="dropdown-content">
                         <li><a href="">Lubrificantes</a></li>
                         <li><a href="">Suportes</a></li>
@@ -48,15 +48,11 @@
                         <li><a href="">Cover</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="">Minha Conta</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./public/login.php">Acessar conta</a></li>
-                        <li><a href="./public/register.php">Criar conta</a></li>
-                    </ul>
-                </li>
+                <li class="dropdown"><a href="./public/login.php">Login</a></li>
             </ul>
         </nav>
     </header>
+
+    <form action="" method="post"></form>
 </body>
 </html>
