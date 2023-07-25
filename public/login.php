@@ -52,8 +52,8 @@
                 <li class="dropdown">
                     <a href="">Minha Conta</a>
                     <ul class="dropdown-content">
-                        <li><a href="./public/login.php">Acessar conta</a></li>
-                        <li><a href="./public/register.php">Criar conta</a></li>
+                        <li><a href="./login.php">Acessar conta</a></li>
+                        <li><a href="./register.php">Criar conta</a></li>
                     </ul>
                 </li>
             </ul>
@@ -69,12 +69,11 @@
 
             <label for="pwd_user">Senha: </label>
             <input type="password" name="pwd_user" id="pwd_user" class="input-form">
-        
-            <label for="pwd_user">Confirmar senha: </label>
-            <input type="password" name="pwd_user" id="pwd_user_confirm" class="input-form">
 
             <button type="submit">Entrar</button>
         </form>
     </section>
+
+    
 </body>
 </html>
