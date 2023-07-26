@@ -14,12 +14,7 @@
     
             if (password_verify($passwordUser, $hashedPassword)) {
                 $typeUser = $user["Type_User"];
-    
-                if($typeUser == 1){
-                    echo "Bem vindo " . $user["Name_User"];
-                } else if($typeUser == 2){
-                    echo "Bem vindo " . $user["Name_User"];
-                }
+                header("Location: ../index.html")
             } else {
                 header("Location: ../public/Falha_de_login.html");
             }
