@@ -1,5 +1,8 @@
 <?php
-    require_once "./Config.php";
+    $servername = "localhost";
+    $username = "root"; 
+    $password = ""; 
+    $database = "cube_place_db"; 
 
     $conn = new mysqli($servername, $username, $password, $database);
 

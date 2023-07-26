@@ -63,7 +63,7 @@
 
     <section>
         <p class="title-form">Identifique-se</p>
-        <form action="" method="post">
+        <form action=".././Controllers/LoginUser.php" method="post">
             <label for="email_user">Email: </label>
             <input type="email" name="email_user" id="email_user" class="input-form">
 
