@@ -13,7 +13,7 @@
             $typeUser = $user["Type_User"];
 
             if($typeUser == 1){
-                echo "Bem vindo " . $user["Name_User"];
+                echo "Seja bem vindo " . $user["Name_User"];
             }else{
                 echo "Falha na procura";
             }
