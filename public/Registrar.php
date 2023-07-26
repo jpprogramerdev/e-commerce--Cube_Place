@@ -63,7 +63,7 @@
 
     <section>
         <p class="title-form">Registre-se</p>
-        <form action="" method="post">
+        <form action=".././Controllers/RegisterUser.php" method="post">
             <label for="name_user">Nome: </label>
             <input type="text" name="name_user" id="name_user" class="input-form">
 
