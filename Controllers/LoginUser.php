@@ -14,9 +14,11 @@
 
             if($typeUser == 1){
                 echo "Bem vindo " . $user["Name_User"];
-            }else{
-                echo "Falha na procura";
+            }else if($typeUser == 2){
+                echo "Bem vindo " . $user["Name_User"];
             }
+        }else{
+            header("Location: ../public/Falha_de_login.html");
         }
     }
 ?>
