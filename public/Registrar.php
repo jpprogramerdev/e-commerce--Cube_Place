@@ -52,8 +52,8 @@
                 <li class="dropdown">
                     <a href="">Minha Conta</a>
                     <ul class="dropdown-content">
-                        <li><a href="./login.php">Acessar conta</a></li>
-                        <li><a href="./register.php">Criar conta</a></li>
+                        <li><a href="./Entrar.php">Acessar conta</a></li>
+                        <li><a href="./Registrar.php">Criar conta</a></li>
                     </ul>
                 </li>
             </ul>
