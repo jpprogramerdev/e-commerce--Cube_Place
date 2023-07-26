@@ -44,4 +44,3 @@ function validarCPF(cpf) {
       cpfInput.setCustomValidity('');
     }
   });
-  
