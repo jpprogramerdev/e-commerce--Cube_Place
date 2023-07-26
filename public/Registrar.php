@@ -70,6 +70,9 @@
             <label for="email_user">Email: </label>
             <input type="email" name="email_user" id="email_user" class="input-form">
 
+            <label for="email_user">CPF: </label>
+            <input type="number" name="CPF_user" id="CPF_user" class="input-form">
+
             <label for="pwd_user">Senha: </label>
             <input type="password" name="pwd_user" id="pwd_user" class="input-form">
 
@@ -81,5 +84,6 @@
     </section>
 
     <script src=".././Scripts/verifyPassword.js"></script>
+    <script src=".././Scripts/verifyCPF.js"></script>
 </body>
 </html>
