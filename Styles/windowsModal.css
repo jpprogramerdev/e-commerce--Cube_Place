@@ -1,0 +1,83 @@
+.modal{
+    position: fixed;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    transform: scale(1.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.1s ease-in-out, transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.modal-content{
+    background-color:#fff;
+    padding:16px 24px;
+    width: 384px;
+    border-radius: 25px;
+}
+
+span.modalClose{
+    float: right;
+    width: 24px;
+    cursor: pointer;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 24px;
+    transition: .2s;
+}
+
+span.modal:hover{
+    transition: .2s;
+    background-color: darkgray;
+}
+
+.show-modal{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+}
+
+input[type=text]{
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+    border: 1px solid black
+}
+
+button.sendData{
+    font-family: 'Inconsolata', monospace;
+    margin-top: 2rem;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 5rem;
+    background-color: #00ff37;
+    cursor: pointer;
+    transition: .2s;
+}
+
+button.sendData:hover{
+    transition: .2s;
+    color: #000000;
+    filter: brightness(0.7); 
+}
+
+/*formulario modal*/
+.form-order{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.titleForm{
+    font-family: 'Tilt Neon', cursive;
+    font-size: 2rem;
+    
+}
