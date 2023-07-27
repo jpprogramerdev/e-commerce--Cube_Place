@@ -14,7 +14,15 @@
     
             if (password_verify($passwordUser, $hashedPassword)) {
                 $typeUser = $user["Type_User"];
-                header("Location: ../index.html")
+
+                session_start();
+                $_SESSION["typeUser"] = $typeUser;
+
+                if($typeUser == 1){
+                    header("Location: ../View/Adm/Produtos.php");
+                }else{
+                    header("Location: ../index.html");
+                }
             } else {
                 header("Location: ../public/Falha_de_login.html");
             }
