@@ -14,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../.././Styles/header.css">
+    <link rel="stylesheet" href="../.././Styles/tableUser.css">
     <title>Cube Place - Produtos</title>
 </head>
 <body>
@@ -68,13 +69,14 @@
     </header>
     <section>
         <?php
-            require_once "../../.Config/Conexao.php";
+            require_once "../.././Config/Conexao.php";
 
             $sql = "SELECT * FROM users WHERE Type_User = 2";
             $result = $conn->query($sql);
 
             if($result->num_rows > 0){
-                echo"<table class='users'>";
+                echo"<div class ='tableArea'>";
+                echo'<table class="tableUsers">';
                 echo"<tr>";
                 echo"<th>Nome</th>";
                 echo"<th>Email</th>";
@@ -88,6 +90,7 @@
                     echo"</tr>";
                 }
                 echo"</table>";
+                echo"</div>";
             }
         ?>
     </section>

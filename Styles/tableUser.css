@@ -1,0 +1,30 @@
+:root{
+    --border-table:#0076e4af;
+    --shadow-table:#ee0000;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.tableArea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table.tableUsers{
+    border: 2px solid var(--border-table);
+    color: white;
+    width: 80%;
+    text-align: center; 
+    border-radius: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+th,tr,td{
+    padding: 1vh;
+    border: 2px solid var(--border-table);
+}
