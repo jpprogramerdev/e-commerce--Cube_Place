@@ -22,7 +22,6 @@
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="">Todos</a></li>
-                <li class="dropdown"><a href="./DisplayUsers.php">Tabela de clientes</a></li> 
                 <li class="dropdown">
                     <a href="#">Cubos</a>
                     <ul class="dropdown-content">
@@ -67,6 +66,30 @@
             </ul>
         </nav>
     </header>
-   
+    <section>
+        <?php
+            require_once "../../.Config/Conexao.php";
+
+            $sql = "SELECT * FROM users WHERE Type_User = 2";
+            $result = $conn->query($sql);
+
+            if($result->num_rows > 0){
+                echo"<table class='users'>";
+                echo"<tr>";
+                echo"<th>Nome</th>";
+                echo"<th>Email</th>";
+                echo"</tr>";
+                
+
+                while($row = $result->fetch_assoc()){
+                    echo"<tr>";
+                    echo"<td>".$row["Name_User"]."</td>";
+                    echo"<td>".$row["Email_User"]."</td>";
+                    echo"</tr>";
+                }
+                echo"</table>";
+            }
+        ?>
+    </section>
 </body>
 </html>
