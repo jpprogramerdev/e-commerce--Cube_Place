@@ -1,3 +1,13 @@
+:root{
+    --background-btn:#aa0030;
+    --background-btn-hover:#8b0028;
+}
+
+.titleForm{
+    color: #000;
+    font-size: 1.2rem;
+}
+
 .modal{
     position: fixed;
     padding: 0;
@@ -8,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.377);
     transform: scale(1.1);
     opacity: 0;
     visibility: hidden;
@@ -16,9 +26,9 @@
 }
 
 .modal-content{
-    background-color:#fff;
+    background-color:#ff8c8c;
     padding:16px 24px;
-    width: 384px;
+    width: 400px;
     border-radius: 25px;
 }
 
@@ -26,7 +36,8 @@ span.modalClose{
     float: right;
     width: 24px;
     cursor: pointer;
-    background-color: lightgray;
+    background-color: #000000;
+    border-radius: 25%;
     text-align: center;
     line-height: 24px;
     transition: .2s;
@@ -43,11 +54,46 @@ span.modal:hover{
     transform: scale(1.0);
 }
 
-input[type=text]{
+.modal label{
+    font-family: 'Tilt Neon', cursive;
+    color: #000000;
+    margin-top: 1vh;
+}
+
+input[type="text"],input[type="number"]{
+    font-family: 'Tilt Neon', cursive;
     border-radius: 5px;
     height: 30px;
     width: 250px;
     border: 1px solid black
+}
+
+textarea{
+    font-family: 'Tilt Neon', cursive;
+}
+
+label.input-file{
+    padding: 10px 5px;
+    width: 50%;
+    background-color: var(--background-btn);
+    color: #000;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5rem;
+    transition: .2s;
+}
+
+label.input-file:hover{
+    transition: .2s;
+    background-color: var(--background-btn-hover);
+}
+
+input[type="file"] {
+    display: none;
 }
 
 button.sendData{
@@ -56,7 +102,7 @@ button.sendData{
     width: 5rem;
     height: 2rem;
     border-radius: 5rem;
-    background-color: #00ff37;
+    background-color: var(--background-btn);
     cursor: pointer;
     transition: .2s;
 }

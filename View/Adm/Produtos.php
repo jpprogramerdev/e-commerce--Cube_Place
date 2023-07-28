@@ -84,9 +84,10 @@
                 <input type="number" id="price_product" name="price_product" required>
 
                 <label class="formModal" for="description_product">Descrição: </label>
-                <textarea name="description_product" id="description_product" cols="50" rows="30"></textarea>
+                <textarea name="description_product" id="description_product" cols="30" rows="20"></textarea>
                 
-                <label for="">Imagem do produto: </label>
+                <label for="image_product">Imagem do produto: </label>
+                <label for="image_product" class="input-file">Enviar imagem </label>
                 <input type="file" name="image_product" id="image_product" accept=".jpg, .jpeg, .png">
 
                 <button type="submit" class="sendData" id="send-data">Enviar</button>

@@ -2,11 +2,11 @@ function validarCPF(cpf) {
     cpf = cpf.replace(/[^\d]/g, '');
   
     if (cpf.length !== 11) {
-      return false;
+      return false
     }
   
     if (/^(\d)\1+$/.test(cpf)) {
-      return false;
+      return false
     }
   
     let soma = 0;
@@ -15,7 +15,7 @@ function validarCPF(cpf) {
     }
     let digito1 = 11 - (soma % 11);
     if (digito1 > 9) {
-      digito1 = 0;
+      digito1 = 0
     }
   
     soma = 0;
@@ -39,8 +39,8 @@ function validarCPF(cpf) {
   cpfInput.addEventListener('blur', function() {
     let cpf = cpfInput.value;
     if (!validarCPF(cpf)) {
-      cpfInput.setCustomValidity('CPF inválido');
+      cpfInput.setCustomValidity('CPF inválido')
     } else {
-      cpfInput.setCustomValidity('');
+      cpfInput.setCustomValidity('')
     }
   });
