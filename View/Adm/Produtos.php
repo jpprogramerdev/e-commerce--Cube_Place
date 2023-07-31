@@ -120,5 +120,6 @@
     </div>
 
     <script src= "../.././Scripts/windowsModal.js"></script>
+    <script src="../.././Scripts/AlertSucess.js"></script>
 </body>
 </html>

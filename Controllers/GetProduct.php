@@ -23,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO products(Name_Product, Img_Product, Price_Product, Description_Product, Quantity_Product, Type_Product) VALUES ('$nameProduct', '$pathImg', '$priceProduct', '$descriptionProduct', '$qtdProduct', '$typeProduct')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "Produto inserido";
+        header("Location: .././View/Adm/Produtos.php?success=true");
+        exit();
     } else {
         echo "Falha ao inserir o produto: " . mysqli_error($conn);
     }
