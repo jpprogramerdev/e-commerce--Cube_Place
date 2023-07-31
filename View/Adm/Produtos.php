@@ -75,13 +75,13 @@
     <div class="modal" id="modal">
         <div class="modal-content">
             <span id="closeModal" class="modalClose">&times;</span>
-            <form method="POST" action="" class="form-order">
+            <form method="POST" action="../../Controllers/GetProduct.php" class="form-order"  enctype="multipart/form-data">
                 <span class="titleForm"> Adicionar produto </span>
                 <label class="formModal" for="name">Nome: </label>
                 <input type="text" name="name_product" id="name_product" required>
 
                 <label for="type_product">Tipo do produto: </label>
-                <select name="type_product" id="type_product">
+                <select name="type_product" id="type_product" required>
                     <option value="1">3x3x3</option>
                     <option value="2">2X2X2</option>
                     <option value="3">4X4X4</option>
