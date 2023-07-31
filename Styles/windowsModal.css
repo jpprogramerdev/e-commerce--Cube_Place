@@ -60,7 +60,7 @@ span.modal:hover{
     margin-top: 1vh;
 }
 
-input[type="text"],input[type="number"]{
+input[type="text"],input[type="number"],select{
     font-family: 'Tilt Neon', cursive;
     border-radius: 5px;
     height: 30px;
