@@ -1,0 +1,31 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');/*font-family: 'Josefin Sans', sans-serif*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-add-prod{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    
+}
+
+.add-product{
+    width: 5vh;
+    height: 5vh;
+    background-color:#8f76ff;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.add-product:hover{ 
+    transition: .3s;
+    background-color:#7a5cff;
+}

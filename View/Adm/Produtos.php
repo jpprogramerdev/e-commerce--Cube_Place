@@ -15,11 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../.././Styles/header.css">
     <link rel="stylesheet" href="../.././Styles/windowsModal.css">
+    <link rel="stylesheet" href="../.././Styles/product.css">
     <title>Cube Place - Produtos</title>
 </head>
 <body>
     <header class="header">
-        <a href="index.html"><img src="./Images/logo-example.png" alt="Logo"></a>
+        <a href="index.html"><img src="../.././Images/logo-example.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="">Todos</a></li>
@@ -68,8 +69,12 @@
             </ul>
         </nav>
     </header>
-   
-    <button class='add-product' type='button' id='add_product'>Adicionar produto</button>
+    
+    <section>
+        <div class="btn-add-prod">
+            <button class='add-product' type='button' id='add_product'>+</button>
+        </div>
+    </section>
     <!--Janela modal do formulário para adicionar produto//Modal window of the form to add product-->
 
     <div class="modal" id="modal">
