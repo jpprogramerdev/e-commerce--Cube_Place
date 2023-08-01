@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');/*font-family: 'Roboto Condensed', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');/*font-family: 'Oswald', sans-serif;*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    width: 99%;
+}
+
+.img-info{
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr;
+}
+
+.img-info img{
+    width:700px;
+}
+
+.info-product{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #f7f4f4;
+}
+
+.info-product .name-product{
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    margin-left: 10px;
+    margin-top: 1vh;
+}
+
+.info-product .price-product{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2rem;
+    color: #1a1919;
+    margin-left: 10px;
+    margin-top: 1.2vh;
+}
+
