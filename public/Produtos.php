@@ -74,12 +74,14 @@
                 }
             ?>
         </div>
-        <?php 
-            require_once "../Controllers/DisplayProduct.php";
-            for ($i = 1; $i <= $totalPages; $i++) {
-                    echo "<a href='Produtos.php?page=$i'>$i</a> ";
-            }
-        ?>
+        <div class="link-pages">
+            <?php 
+                require_once "DisplayProduct.php";
+                for ($i = 1; $i <= $totalPages; $i++) {
+                        echo "<a href='Produtos.php?page=$i'>$i</a> ";
+                }
+            ?>
+        </div>
     </section>
 </body>
 </html>

@@ -47,7 +47,7 @@
     border-radius: 25px 0px;
     background-color: #faf5f5;
     transition: transform 0.3s ease-in-out;
-    margin-top: 2vh;
+    margin-top: 3vh;
 }
 
 .product:hover{
@@ -82,4 +82,26 @@
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     font-size: 1.5rem;
+}
+
+.link-pages{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin:5vh 0;
+    gap:3vh;
+}
+
+.link-pages a{
+    color:#551A8B;
+    text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5em;
+    transition: .3s;
+}
+
+.link-pages a:hover{
+    color:#216bcc;
+    transition: .3s;
 }

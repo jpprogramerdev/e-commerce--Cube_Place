@@ -84,14 +84,14 @@
         </div>
     </section>
 
-    <footer>
+    <div class="link-pages">
         <?php 
-            require_once "../../Controllers/DisplayProduct.php";
+            require_once "DisplayProduct.php";
             for ($i = 1; $i <= $totalPages; $i++) {
-                    echo "<a href='Produtos.php?page=$i'>$i</a> ";
+                echo "<a href='Produtos.php?page=$i'>$i</a> ";
             }
         ?>
-    </footer>
+    </div>
 
     <!--Janela modal do formulário para adicionar produto//Modal window of the form to add product-->
     <div class="modal" id="modal">
