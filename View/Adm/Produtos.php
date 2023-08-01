@@ -68,21 +68,31 @@
         <div class="btn-add-prod">
             <button class='add-product' type='button' id='add_product'>+</button>
         </div>
-        <?php
-            require_once "../../Controllers/DisplayProduct.php";
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo"<p>".$row["Name_Product"]."</p>";
-                echo"<img src='../".$row["Img_Product"]."'>";
-                echo"<p>".$row["Price_Product"]."</p>";
-                echo"<p>".$row["Description_Product"]."</p>";
-            }
 
+        <div class="container-product">
+            <?php
+                require_once "DisplayProduct.php";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo"<div class='product'>";
+                        echo"<p class='title-product'>".$row["Name_Product"]."</p>";
+                        echo"<img src='../".$row["Img_Product"]."'>";
+                        echo"<p class='subtitle-price'>A partir de</p>";
+                        echo"<p class='price-product'>R$".$row["Price_Product"]."</p>";
+                    echo"</div>";
+                }
+            ?>
+        </div>
+    </section>
+
+    <footer>
+        <?php 
+            require_once "../../Controllers/DisplayProduct.php";
             for ($i = 1; $i <= $totalPages; $i++) {
-                echo "<a href='Produtos.php?page=$i'>$i</a> ";
+                    echo "<a href='Produtos.php?page=$i'>$i</a> ";
             }
         ?>
-    </section>
-    ''
+    </footer>
+
     <!--Janela modal do formulário para adicionar produto//Modal window of the form to add product-->
     <div class="modal" id="modal">
         <div class="modal-content">

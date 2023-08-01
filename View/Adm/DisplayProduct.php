@@ -1,5 +1,5 @@
 <?php
-    require_once "../Config/Conexao.php";
+    require_once "../../Config/Conexao.php";
     $itemsPerPage = 12;
 
     $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
