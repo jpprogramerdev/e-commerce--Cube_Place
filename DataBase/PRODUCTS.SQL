@@ -6,6 +6,7 @@ CREATE TABLE products(
     Img_Product VARCHAR(500) NOT NULL,
     Price_Product DECIMAL(5,2) NOT NULL,
     Description_Product VARCHAR(800) NOT NULL,
+    Brand_Product VARCHAR(200) NOT NULL,
     Quantity_Product INT NOT NULL,
     Type_Product SMALLINT NOT NULL, 
     FOREIGN KEY(Type_Product) references type_of_product(ID_Type_Product)
