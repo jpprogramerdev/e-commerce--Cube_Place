@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cube Place</title>
     <link rel="stylesheet" href=".././Styles/header.css">
-    <link rel="stylesheet" href=".././Styles/form.css">
+    <link rel="stylesheet" href=".././Styles/windowsModal.css">
+    <link rel="stylesheet" href=".././Styles/product.css">
+    <title>Cube Place - Produtos</title>
 </head>
 <body>
-<header class="header">
+    <header class="header">
         <a href="index.html"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
-                <li class="dropdown"><a href="./Produtos.php">Todos</a></li>
+                <li class="dropdown"><a href="">Todos</a></li>
                 <li class="dropdown">
                     <a href="#">Cubos</a>
                     <ul class="dropdown-content">
@@ -48,31 +49,25 @@
                         <li><a href="">Cover</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="">Minha Conta</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./Entrar.php">Acessar conta</a></li>
-                        <li><a href="./Registrar.php">Criar conta</a></li>
-                    </ul>
-                </li>
+                <li class="dropdown"><a href="../.././Controllers/Loggout.php">Sair da Conta</a> </li>
             </ul>
         </nav>
     </header>
-
-
-    <section>
-        <p class="title-form">Identifique-se</p>
-        <form action=".././Controllers/LoginUser.php" method="post">
-            <label for="email_user">Email: </label>
-            <input type="email" name="email_user" id="email_user" class="input-form">
-
-            <label for="pwd_user">Senha: </label>
-            <input type="password" name="pwd_user" id="pwd_user" class="input-form">
-
-            <button type="submit">Entrar</button>
-        </form>
-    </section>
-
     
+    <section>
+        <?php
+            require_once ".././Controllers/DisplayProduct.php";
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo"<p>".$row["Name_Product"]."</p>";
+                echo"<img src='".$row["Img_Product"]."'>";
+                echo"<p>".$row["Price_Product"]."</p>";
+                echo"<p>".$row["Description_Product"]."</p>";
+            }
+
+            for ($i = 1; $i <= $totalPages; $i++) {
+                echo "<a href='Produtos.php?page=$i'>$i</a> ";
+            }
+        ?>
+    </section>
 </body>
 </html>

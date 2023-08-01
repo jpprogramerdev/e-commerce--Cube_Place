@@ -13,7 +13,7 @@
         <a href="index.html"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
-                <li class="dropdown"><a href="">Todos</a></li>
+                <li class="dropdown"><a href="./Produtos.php">Todos</a></li>
                 <li class="dropdown">
                     <a href="#">Cubos</a>
                     <ul class="dropdown-content">

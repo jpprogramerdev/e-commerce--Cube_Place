@@ -59,13 +59,7 @@
                         <li><a href="">Cover</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="">Minha Conta</a>
-                    <ul class="dropdown-content">
-                        <li><a href="../.././public/Entrar.php">Acessar conta</a></li>
-                        <li><a href="../.././public/Registrar.php">Criar conta</a></li>
-                    </ul>
-                </li>
+                <li class="dropdown"><a href="../.././Controllers/Loggout.php">Sair da Conta</a> </li>
             </ul>
         </nav>
     </header>
@@ -75,7 +69,17 @@
             <button class='add-product' type='button' id='add_product'>+</button>
         </div>
         <?php
-            require_once "./DisplayProduct.php";
+            require_once "../.././Controllers/DisplayProduct.php";
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo"<p>".$row["Name_Product"]."</p>";
+                echo"<img src='../".$row["Img_Product"]."'>";
+                echo"<p>".$row["Price_Product"]."</p>";
+                echo"<p>".$row["Description_Product"]."</p>";
+            }
+
+            for ($i = 1; $i <= $totalPages; $i++) {
+                echo "<a href='Produtos.php?page=$i'>$i</a> ";
+            }v
         ?>
     </section>
     <!--Janela modal do formulário para adicionar produto//Modal window of the form to add product-->
