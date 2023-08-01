@@ -74,13 +74,16 @@
         <div class="btn-add-prod">
             <button class='add-product' type='button' id='add_product'>+</button>
         </div>
+        <?php
+            require_once "./DisplayProduct.php";
+        ?>
     </section>
     <!--Janela modal do formulário para adicionar produto//Modal window of the form to add product-->
 
     <div class="modal" id="modal">
         <div class="modal-content">
             <span id="closeModal" class="modalClose">&times;</span>
-            <form method="POST" action="../../Controllers/GetProduct.php" class="form-order"  enctype="multipart/form-data">
+            <form method="POST" action="../../Controllers/SetProduct.php" class="form-order"  enctype="multipart/form-data">
                 <span class="titleForm"> Adicionar produto </span>
                 <label class="formModal" for="name">Nome: </label>
                 <input type="text" name="name_product" id="name_product" required>
