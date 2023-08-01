@@ -17,15 +17,16 @@
 .add-product{
     width: 5vh;
     height: 5vh;
-    background-color:#8f76ff;
+    background-color:#000000;
     cursor: pointer;
     font-size: 20px;
     font-family: 'Josefin Sans', sans-serif;
     border-radius: 50%;
     transition: .3s;
+    color: var(--text);
 }
 
 .add-product:hover{ 
     transition: .3s;
-    background-color:#7a5cff;
+    background-color:#160075;
 }

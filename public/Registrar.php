@@ -10,7 +10,7 @@
 </head>
 <body>
 <header class="header">
-        <a href="index.html"><img src=".././Images/logo-example.png" alt="Logo"></a>
+        <a href="index.html"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="">Todos</a></li>

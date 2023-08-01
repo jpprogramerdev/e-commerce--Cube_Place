@@ -17,7 +17,7 @@
 
 table.tableUsers{
     border: 2px solid var(--border-table);
-    color: white;
+    color: #000000;
     width: 80%;
     text-align: center; 
     border-radius: 5px;

@@ -20,7 +20,7 @@
 </head>
 <body>
     <header class="header">
-        <a href="index.html"><img src="../.././Images/logo-example.png" alt="Logo"></a>
+        <a href="index.html"><img src="../.././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="">Todos</a></li>
@@ -110,7 +110,7 @@
                 <input type="number" id="price_product" name="price_product" required>
 
                 <label class="formModal" for="description_product">Descrição: </label>
-                <textarea name="description_product" id="description_product" cols="30" rows="20" required></textarea>
+                <textarea name="description_product" id="description_product" cols="30" rows="10" required></textarea>
                 
                 <label for="image_product">Imagem do produto: </label>
                 <label for="image_product" class="input-file">Enviar imagem </label>

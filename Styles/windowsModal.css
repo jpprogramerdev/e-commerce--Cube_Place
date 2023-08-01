@@ -26,8 +26,8 @@
 }
 
 .modal-content{
-    background-color:#ff8c8c;
-    padding:16px 24px;
+    background-color:#ff3770;
+    padding:16px 10px;
     width: 400px;
     border-radius: 25px;
 }
@@ -41,6 +41,7 @@ span.modalClose{
     text-align: center;
     line-height: 24px;
     transition: .2s;
+    color: white;
 }
 
 span.modal:hover{
@@ -83,7 +84,7 @@ label.input-file{
     display: block;
     margin-top: 10px;
     cursor: pointer;
-    border-radius: 5rem;
+    border-radius: 25px 0px;border-radius: 25px 0px;
     transition: .2s;
 }
 
@@ -101,10 +102,11 @@ button.sendData{
     margin-top: 2rem;
     width: 5rem;
     height: 2rem;
-    border-radius: 5rem;
+    border-radius: 25px 0px;
     background-color: var(--background-btn);
     cursor: pointer;
     transition: .2s;
+    border: 0px solid transparent;
 }
 
 button.sendData:hover{
@@ -119,7 +121,7 @@ button.sendData:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
 }
 
 .titleForm{
