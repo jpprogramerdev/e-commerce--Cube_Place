@@ -69,7 +69,7 @@
             <button class='add-product' type='button' id='add_product'>+</button>
         </div>
         <?php
-            require_once "../.././Controllers/DisplayProduct.php";
+            require_once "../../Controllers/DisplayProduct.php";
             while ($row = mysqli_fetch_assoc($result)) {
                 echo"<p>".$row["Name_Product"]."</p>";
                 echo"<img src='../".$row["Img_Product"]."'>";
@@ -79,11 +79,11 @@
 
             for ($i = 1; $i <= $totalPages; $i++) {
                 echo "<a href='Produtos.php?page=$i'>$i</a> ";
-            }v
+            }
         ?>
     </section>
+    ''
     <!--Janela modal do formulário para adicionar produto//Modal window of the form to add product-->
-
     <div class="modal" id="modal">
         <div class="modal-content">
             <span id="closeModal" class="modalClose">&times;</span>
@@ -125,6 +125,9 @@
 
                 <label class="formModal" for="quantity_product">Quantidade no estoque: </label>
                 <input type="number" id="quantity_product" name="quantity_product" required>
+
+                <label class="formModal" for="price_product">Marca: </label>
+                <input type="text" id="brand_name" name="brand_name" required>
 
                 <button type="submit" class="sendData" id="send-data">Enviar</button>
             </form>

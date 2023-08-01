@@ -49,7 +49,13 @@
                         <li><a href="">Cover</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="../.././Controllers/Loggout.php">Sair da Conta</a> </li>
+                <li class="dropdown">
+                    <a href="">Minha Conta</a>
+                    <ul class="dropdown-content">
+                        <li><a href="./Entrar.php">Acessar conta</a></li>
+                        <li><a href="./Registrar.php">Criar conta</a></li>
+                    </ul>
+                </li>v
             </ul>
         </nav>
     </header>
