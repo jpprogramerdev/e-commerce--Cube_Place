@@ -65,13 +65,17 @@
             <?php
                 require_once "DisplayProduct.php";
                 while ($row = mysqli_fetch_assoc($result)) {
+                    $productId = $row["ID_Product"];
                     echo"<div class='product'>";
-                        echo"<p class='title-product'>".$row["Name_Product"]."</p>";
-                        echo"<img src='".$row["Img_Product"]."'>";
-                        echo"<p class='subtitle-price'>A partir de</p>";
-                        echo"<p class='price-product'>R$".$row["Price_Product"]."</p>";
+                        echo"<a href='product_details.php?id=$productId'>";
+                            echo"<p class='title-product'>".$row["Name_Product"]."</p>";
+                            echo"<img src='".$row["Img_Product"]."'>";
+                            echo"<p class='subtitle-price'>A partir de</p>";
+                            echo"<p class='price-product'>R$".$row["Price_Product"]."</p>";
+                        echo"</a>";
                     echo"</div>";
                 }
+            ?>
             ?>
         </div>
         <div class="link-pages">

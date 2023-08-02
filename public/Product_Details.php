@@ -1,8 +1,13 @@
 <?php
     require_once "../Config/Conexao.php";
 
+    session_start();
+    
     if (isset($_GET['id'])) {
-        $productId = $_GET['id'];       
+        $productId = $_GET['id'];
+        if(isset($_SESSION["idUser"])){
+            $idClient = $_SESSION["idUser"];
+        }    
         $sql = "SELECT * FROM products WHERE ID_Product = $productId";
         $result = mysqli_query($conn, $sql);
 
@@ -70,18 +75,26 @@
                         <li><a href="">Cover</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="">Minha Conta</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./public/Entrar.php">Acessar conta</a></li>
-                        <li><a href="./public/Registrar.php">Criar conta</a></li>
-                    </ul>
-                </li>
+                <li class="dropdown"><a href=".././Controllers/Loggout.php">Sair da Conta</a> </li>
             </ul>
         </nav>
     </header>
 
     <section>
+    <?php
+        if(isset($_SESSION["idUser"])){
+            $sql = "SELECT COUNT(*) FROM shopping_cart WHERE  Id_Client = $idClient";
+            $result = $conn->query($sql);
+            
+            if ($result) {
+                $row = $result->fetch_assoc();
+                $quantProd = $row["COUNT(*)"];
+                echo "<p>" . $quantProd . "</p>";
+            } else {
+                echo "Erro na consulta SQL: " . $conn->error;
+            }
+        }
+    ?>
         <div class="img-info">
             <div class="img-product">
                 <?php
@@ -92,6 +105,7 @@
                 <?php
                     echo "<p class='name-product'>".$product["Name_Product"]."</p>";
                     echo "<p class='price-product'>R$ ".$product["Price_Product"]."</p>";
+                    echo"<a href='../Controllers/AddInCart.php?id=$productId'>Adiconar ao carrinho</a>";
                 ?>
                 <label for="cep_user">Informe seu CEP</label>
                 <input type="number" name="cep_user" id="cep_user">

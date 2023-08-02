@@ -1,6 +1,7 @@
 use cube_place_db;
 
 CREATE TABLE shopping_cart(
+    Id_Cart INT PRIMARY KEY AUTO_INCREMENT,
     Id_Client SMALLINT NOT NULL,
     Id_Product int NOT NULL,
     Quantity int NOT NULL,

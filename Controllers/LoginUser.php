@@ -14,9 +14,11 @@
     
             if (password_verify($passwordUser, $hashedPassword)) {
                 $typeUser = $user["Type_User"];
+                $idUser = $user["ID_User"];
 
                 session_start();
                 $_SESSION["typeUser"] = $typeUser;
+                $_SESSION["idUser"] = $idUser;
 
                 if($typeUser == 1){
                     header("Location: ../View/Adm/Produtos.php");
