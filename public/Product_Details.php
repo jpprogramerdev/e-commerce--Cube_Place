@@ -41,7 +41,7 @@
         <a href="../index.php"><img src="../Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
-                <li class="dropdown"><a href="./public/Produtos.php">Todos</a></li>
+                <li class="dropdown"><a href="Produtos.php">Todos</a></li>
                 <li class="dropdown">
                     <a href="#">Cubos</a>
                     <ul class="dropdown-content">
@@ -102,10 +102,6 @@
     </header>
 
     <section>
-        <div class="shopping-cart">
-                
-                
-        </div>
         <div class="img-info">
             <div class="img-product">
                 <?php
@@ -115,17 +111,17 @@
             <div class="info-product">
                 <?php
                     echo "<p class='name-product'>".$product["Name_Product"]."</p>";
+                    echo "<p class='brand-product'>".$product["Brand_Product"]."</p>";
                     echo "<p class='price-product'>R$ ".$product["Price_Product"]."</p>";
-                    echo"<a href='../Controllers/AddInCart.php?id=$productId'>Adiconar ao carrinho</a>";
+                    echo "<a href='../Controllers/AddInCart.php?id=$productId' class='link-add-cart'>";
+                        echo "<div class='add-item-cart'>";
+                            echo "<p>Adiconar ao carrinho</p>";
+                        echo "</div>";
+                    echo "</a>";
+                    echo "<p class='description-title'>Descrição</p>";
+                    echo "<p class='description-product'>".$product["Description_Product"]."</p>";
                 ?>
-                <label for="cep_user">Informe seu CEP</label>
-                <input type="number" name="cep_user" id="cep_user">
             </div>
-        </div>
-        <div class="description-product">
-            <?php
-                echo "<p>".$product["Description_Product"]."</p>";
-            ?>
         </div>
     </section>
 </body>
