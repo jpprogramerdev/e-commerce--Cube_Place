@@ -12,7 +12,7 @@
 </head>
 <body>
     <header class="header">
-        <a href="index.html"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
+        <a href="../index.php"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="">Todos</a></li>
@@ -60,6 +60,23 @@
                 <li class="dropdown">
                     <a href="">
                         <i class="fas fa-shopping-cart"></i>
+                        <?php
+                            if(isset($_SESSION["idUser"])){
+                                $sql = "SELECT COUNT(*) FROM shopping_cart WHERE  Id_Client = $idClient";
+                                $result = $conn->query($sql);
+                                
+                                if ($result) {
+                                    $row = $result->fetch_assoc();
+                                    $quantProd = $row["COUNT(*)"];
+                                    
+                                    echo  $quantProd ;
+                                } else {
+                                    echo 0;
+                                }
+                            }else{
+                                echo 0;
+                            }
+                        ?>
                     </a>
                 </li>
             </ul>

@@ -1,6 +1,8 @@
 <?php
-    session_start();
+    require_once "../../Config/Conexao.php";
 
+    session_start();
+    $idClient = $_SESSION["idUser"];
     if (!isset($_SESSION["typeUser"]) || $_SESSION["typeUser"] != 1) {
         header("Location: ../public/Acesso_negado.html");
         exit();
@@ -15,11 +17,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../.././Styles/header.css">
     <link rel="stylesheet" href="../.././Styles/tableUser.css">
+    <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
     <title>Cube Place - Produtos</title>
 </head>
 <body>
     <header class="header">
-        <a href="index.html"><img src="../.././Images/logo-cube-place.png" alt="Logo"></a>
+        <a href="../../index.php"><img src="../.././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="./Produtos.php">Todos</a></li>
@@ -57,12 +60,28 @@
                         <li><a href="">Cover</a></li>
                     </ul>
                 </li>
+                <li class="dropdown"><a href="../.././Controllers/Loggout.php">Sair da Conta</a> </li>
                 <li class="dropdown">
-                    <a href="">Minha Conta</a>
-                    <ul class="dropdown-content">
-                        <li><a href="../.././public/Entrar.php">Acessar conta</a></li>
-                        <li><a href="../.././public/Registrar.php">Criar conta</a></li>
-                    </ul>
+                    <a href="">
+                        <i class="fas fa-shopping-cart"></i>
+                        <?php
+                            if(isset($_SESSION["idUser"])){
+                                $sql = "SELECT COUNT(*) FROM shopping_cart WHERE  Id_Client = $idClient";
+                                $result = $conn->query($sql);
+                                
+                                if ($result) {
+                                    $row = $result->fetch_assoc();
+                                    $quantProd = $row["COUNT(*)"];
+                                    
+                                    echo  $quantProd ;
+                                } else {
+                                    echo 0;
+                                }
+                            }else{
+                                echo 0;
+                            }
+                        ?>
+                    </a>
                 </li>
             </ul>
         </nav>
