@@ -1,5 +1,8 @@
+/*Fontes*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');/*font-family: 'Roboto Condensed', sans-serif;*/
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');/*font-family: 'Oswald', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');/*font-family: 'Josefin Sans', sans-serif*/
+
 
 *{
     box-sizing: border-box;
@@ -11,9 +14,25 @@ section{
     width: 99%;
 }
 
+.shopping-cart{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.shopping-cart img{
+    width: 6vh;
+}
+
+.shopping-cart .quant-itens{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3.5rem;
+}
+
 .img-info{
     display: grid;
     grid-template-columns: 2.5fr 1.5fr;
+    margin-top: 3vh;
 }
 
 .img-info img{

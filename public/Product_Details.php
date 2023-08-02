@@ -29,11 +29,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/header.css">
+    <link rel="stylesheet" href="../Styles/productDetails.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
     <?php
         echo"<title>Cube Place - ".$product["Name_Product"]."</title>"
     ?>
-    <link rel="stylesheet" href="../Styles/header.css">
-    <link rel="stylesheet" href="../Styles/productDetails.css">
 </head>
 <body>
     <header class="header">
@@ -76,25 +77,34 @@
                     </ul>
                 </li>
                 <li class="dropdown"><a href=".././Controllers/Loggout.php">Sair da Conta</a> </li>
+                <li class="dropdown">
+                    <a href="">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <section>
-    <?php
-        if(isset($_SESSION["idUser"])){
-            $sql = "SELECT COUNT(*) FROM shopping_cart WHERE  Id_Client = $idClient";
-            $result = $conn->query($sql);
-            
-            if ($result) {
-                $row = $result->fetch_assoc();
-                $quantProd = $row["COUNT(*)"];
-                echo "<p>" . $quantProd . "</p>";
-            } else {
-                echo "Erro na consulta SQL: " . $conn->error;
-            }
-        }
-    ?>
+        <div class="shopping-cart">
+                <?php
+                    if(isset($_SESSION["idUser"])){
+                        $sql = "SELECT COUNT(*) FROM shopping_cart WHERE  Id_Client = $idClient";
+                        $result = $conn->query($sql);
+                        
+                        if ($result) {
+                            $row = $result->fetch_assoc();
+                            $quantProd = $row["COUNT(*)"];
+                            
+                            echo "<p class='quant-itens'>" . $quantProd . "</p>" ;
+                        } else {
+                            echo "Erro na consulta SQL: " . $conn->error;
+                        }
+                    }
+                ?>
+                
+        </div>
         <div class="img-info">
             <div class="img-product">
                 <?php

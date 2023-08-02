@@ -7,6 +7,7 @@
     <link rel="stylesheet" href=".././Styles/header.css">
     <link rel="stylesheet" href=".././Styles/windowsModal.css">
     <link rel="stylesheet" href=".././Styles/product.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
     <title>Cube Place - Produtos</title>
 </head>
 <body>
@@ -55,7 +56,12 @@
                         <li><a href="./Entrar.php">Acessar conta</a></li>
                         <li><a href="./Registrar.php">Criar conta</a></li>
                     </ul>
-                </li>v
+                </li>
+                <li class="dropdown">
+                    <a href="">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>

@@ -7,6 +7,7 @@
     <title>Cube Place</title>
     <link rel="stylesheet" href=".././Styles/header.css">
     <link rel="stylesheet" href=".././Styles/form.css">
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
 </head>
 <body>
 <header class="header">
@@ -54,6 +55,11 @@
                         <li><a href="./Entrar.php">Acessar conta</a></li>
                         <li><a href="./Registrar.php">Criar conta</a></li>
                     </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
                 </li>
             </ul>
         </nav>
