@@ -102,24 +102,6 @@
                 echo "<p>".$product["Description_Product"]."</p>";
             ?>
         </div>
-
-        
     </section>
-    <script>
-        function calcularFrete() {
-            const cepUser = document.getElementById('cep_user').value;
-            // Aqui você precisaria fazer uma requisição para a API dos Correios com o CEP informado
-            // e obter as informações de frete, mas como mencionado anteriormente, não podemos fazer isso aqui.
-            // A requisição à API dos Correios geralmente é feita em um servidor, não no cliente (navegador).
-            // Se você tiver acesso a uma API de terceiros que forneça informações de frete, poderia utilizá-la aqui.
-
-            // Vamos apenas simular o resultado da requisição para fins de exemplo:
-            const frete = 15.00; // Valor do frete obtido na API dos Correios (ou simulado)
-
-            // Exibir o resultado na página
-            const resultadoElement = document.getElementById('resultado');
-            resultadoElement.innerHTML = `O frete para o CEP ${cepUser} é R$ ${frete.toFixed(2)}`;
-        }
-    </script>
 </body>
 </html>
