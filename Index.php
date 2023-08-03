@@ -1,3 +1,15 @@
+<?php
+    require_once "Config/Conexao.php";
+
+    session_start();
+    $idClient = null;
+    $nameUser = null;
+    if (isset($_SESSION["typeUser"])) {
+        $idClient =  $_SESSION["typeUser"];
+        $nameUser = $_SESSION["nameUser"];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -50,11 +62,17 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="">Minha Conta</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./public/Entrar.php">Acessar conta</a></li>
-                        <li><a href="./public/Registrar.php">Criar conta</a></li>
-                    </ul>
+                    <?php
+                        if(isset($_SESSION["idUser"])){
+                            echo "<li class='dropdown'><a href='Controllers/Loggout.php'>Sair da Conta</a></li>";
+                        }else{
+                            echo "<a href=''>Minha Conta</a>";
+                            echo "<ul class='dropdown-content'>";
+                                echo "<li><a href='./public/Entrar.php'>Acessar conta</a></li>";
+                                echo "<li><a href='./public/Registrar.php'>Criar conta</a></li>";
+                            echo "</ul>";
+                        }
+                    ?>
                 </li>
                 <li class="dropdown">
                     <a href="">
@@ -81,5 +99,14 @@
             </ul>
         </nav>
     </header>
+    <section>
+        <?php
+            if(isset($_SESSION["nameUser"])){
+                echo "<p>Bem-vindo " . $nameUser . "</p>"; 
+            }else{
+                echo "<p>Bem-vindo</p>";
+            }
+        ?>
+    </section>
 </body>
 </html>
