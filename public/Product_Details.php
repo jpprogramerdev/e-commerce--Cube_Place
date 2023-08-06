@@ -76,9 +76,20 @@
                         <li><a href="">Cover</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href=".././Controllers/Loggout.php">Sair da Conta</a> </li>
                 <li class="dropdown">
-                    <a href="">
+                    <?php
+                        if(isset($_SESSION["idUser"])){
+                            echo "<li class='dropdown'><a href='../Controllers/Loggout.php'>Sair da Conta</a></li>";
+                        }else{
+                            echo "<a href=''>Minha Conta</a>";
+                            echo "<ul class='dropdown-content'>";
+                                echo "<li><a href='./public/Entrar.php'>Acessar conta</a></li>";
+                                echo "<li><a href='./public/Registrar.php'>Criar conta</a></li>";
+                            echo "</ul>";
+                        }
+                    ?>
+                <li class="dropdown">
+                    <a href="../View/Users/ShoppingCart.php">
                         <i class="fas fa-shopping-cart"></i>
                         <?php
                             if(isset($_SESSION["idUser"])){
@@ -113,16 +124,34 @@
                     echo "<p class='name-product'>".$product["Name_Product"]."</p>";
                     echo "<p class='brand-product'>".$product["Brand_Product"]."</p>";
                     echo "<p class='price-product'>R$ ".$product["Price_Product"]."</p>";
-                    echo "<a href='../Controllers/AddInCart.php?id=$productId' class='link-add-cart'>";
-                        echo "<div class='add-item-cart'>";
-                            echo "<p>Adiconar ao carrinho</p>";
-                        echo "</div>";
-                    echo "</a>";
+                    echo "<form action='../Controllers/AddInCart.php' method='GET' class='prod-form'>";
+                        echo "<label for='quantity_prod'>Quantidade:</label>";
+                        echo "<input type='number' name='quantity_prod' id='quantity_prod' value='1' step='1'>";
+                        echo "<input type='hidden' name='id' value='$productId'>";
+                        echo "<button type='submit' class='link-add-cart' id='btn-cart'>";
+                            echo "<div class='add-item-cart'>";
+                                echo "<p>Adicionar ao carrinho</p>";
+                            echo "</div>";
+                        echo "</button>";
+                    echo "</form>";
                     echo "<p class='description-title'>Descrição</p>";
                     echo "<p class='description-product'>".$product["Description_Product"]."</p>";
                 ?>
             </div>
         </div>
     </section>
+
+    <script>
+       document.getElementById('btn-cart').addEventListener('click', function(event) {
+            <?php
+                if (isset($_SESSION["idUser"])) {
+                    echo "return";
+                } else {
+                    echo "event.preventDefault()";
+                    echo "window.location.href = '../public/Entrar.php'";
+                }
+            ?>
+        });
+    </script>
 </body>
 </html>

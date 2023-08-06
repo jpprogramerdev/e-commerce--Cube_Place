@@ -53,7 +53,7 @@ section{
     margin-top: 1vh;
 }
 
-.info-product .brand-product{
+.info-product .brand-product, label{
     font-family: 'Raleway', sans-serif;
     margin-left: 10px;
     margin-top: 1vh;
@@ -67,8 +67,9 @@ section{
     margin-top: 3vh;
 }
 
-a.link-add-cart{
-    text-decoration: none;
+button.link-add-cart{
+    background-color: transparent;
+    border: 0px solid transparent;
 }
 
 .add-item-cart{
@@ -109,4 +110,20 @@ a.link-add-cart{
     text-align: justify;
     font-size: 1.1rem;
     font-family: 'Josefin Sans', sans-serif;
+}
+
+form.prod-form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type="number"]{
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 100px;
+    height: 30px;
+    font-size: 1.1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 12px 0px;
+    padding-left: 5px;
 }

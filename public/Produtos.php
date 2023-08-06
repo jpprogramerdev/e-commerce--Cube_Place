@@ -1,3 +1,16 @@
+<?php
+    require_once "../../Config/Conexao.php";
+
+    session_start();
+    $idClient = null;
+    $nameUser = null;
+    if (isset($_SESSION["typeUser"])) {
+        $idClient =  $_SESSION["idUser"];
+        $nameUser = $_SESSION["nameUser"];
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -98,8 +111,7 @@
                         echo"</a>";
                     echo"</div>";
                 }
-            ?>
-            ?>
+            ?>     
         </div>
         <div class="link-pages">
             <?php 

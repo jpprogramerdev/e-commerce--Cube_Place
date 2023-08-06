@@ -1,5 +1,5 @@
 <?php
-    require_once "Config/Conexao.php";
+    require_once "../../Config/Conexao.php";
 
     session_start();
     $idClient = null;
@@ -17,16 +17,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cube Place</title>
-    <link rel="stylesheet" href="./Styles/header.css">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../Styles/header.css">
+    <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
 
 </head>
 <body>
     <header class="header">
-        <a href="index.php"><img src="./Images/logo-cube-place.png" alt="Logo"></a>
+        <a href="../../index.php"><img src="../../Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
-                <li class="dropdown"><a href="./public/Produtos.php">Todos</a></li>
+                <li class="dropdown"><a href="../../public/Produtos.php">Todos</a></li>
                 <li class="dropdown">
                     <a href="#">Cubos</a>
                     <ul class="dropdown-content">
@@ -68,8 +68,8 @@
                         }else{
                             echo "<a href=''>Minha Conta</a>";
                             echo "<ul class='dropdown-content'>";
-                                echo "<li><a href='./public/Entrar.php'>Acessar conta</a></li>";
-                                echo "<li><a href='./public/Registrar.php'>Criar conta</a></li>";
+                                echo "<li><a href='../../public/Entrar.php'>Acessar conta</a></li>";
+                                echo "<li><a href='../../public/Registrar.php'>Criar conta</a></li>";
                             echo "</ul>";
                         }
                     ?>
@@ -79,17 +79,15 @@
                         <i class="fas fa-shopping-cart"></i>
                         <?php
                             if(isset($_SESSION["idUser"])){
-                                $sql = "SELECT COUNT(*) FROM shopping_cart WHERE  Id_Client = $idClient";
+                                $sql = "SELECT COUNT(*) FROM shopping_cart WHERE Id_Client = $idClient";
                                 $result = $conn->query($sql);
                                 
-                                if ($result) {
+                             
                                     $row = $result->fetch_assoc();
                                     $quantProd = $row["COUNT(*)"];
                                     
                                     echo  $quantProd ;
-                                } else {
-                                    echo 0;
-                                }
+                    
                             }else{
                                 echo 0;
                             }
@@ -100,13 +98,31 @@
         </nav>
     </header>
     <section>
-        <?php
-            if(isset($_SESSION["nameUser"])){
-                echo "<p>Bem-vindo " . $nameUser . "</p>"; 
-            }else{
-                echo "<p>Bem-vindo</p>";
-            }
-        ?>
+            <?php
+                require_once "../../Controllers/DisplayCart.php";
+                $totalShopping = 0.00;
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $productId = $row["Id_Product"];
+                        $productName = $row["Name_Product"];
+                        $productImg = $row["Img_Product"];
+                        $productPrice = $row["Price_Product"];
+                        $productQuantity = $row["Quantity"];
+        
+                        echo "<div class='product'>";
+                            echo "<p class='title-product'>" . $productName . "</p>";
+                            echo "<img src='../" . $productImg . "' alt='Product Image'>";
+                            echo "<p class='price-product'>R$" . $productPrice . "</p>";
+                            echo "<p class='quantity-product'>Quantidade: " . $productQuantity . "</p>"; 
+                        echo "</div>";
+                        $totalShopping += $productPrice * $productQuantity;
+                    }
+
+                    echo $totalShopping;
+                } else {
+                    echo "Nenhum produto no carrinho.";
+                }
+            ?> 
     </section>
 </body>
 </html>
