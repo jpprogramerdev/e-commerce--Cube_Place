@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cube Place</title>
     <link rel="stylesheet" href="../../Styles/header.css">
+    <link rel="stylesheet" href="../../Styles/cart.css">
     <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
 
 </head>
@@ -99,26 +100,40 @@
     </header>
     <section>
             <?php
-                require_once "../../Controllers/DisplayCart.php";
-                $totalShopping = 0.00;
-                if ($result && mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $productId = $row["Id_Product"];
-                        $productName = $row["Name_Product"];
-                        $productImg = $row["Img_Product"];
-                        $productPrice = $row["Price_Product"];
-                        $productQuantity = $row["Quantity"];
-        
-                        echo "<div class='product'>";
-                            echo "<p class='title-product'>" . $productName . "</p>";
-                            echo "<img src='../" . $productImg . "' alt='Product Image'>";
-                            echo "<p class='price-product'>R$" . $productPrice . "</p>";
-                            echo "<p class='quantity-product'>Quantidade: " . $productQuantity . "</p>"; 
+                echo "<div class='total-products'>";
+                    require_once "../../Controllers/DisplayCart.php";
+                    $totalShopping = 0.00;
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $productId = $row["Id_Product"];
+                            $productName = $row["Name_Product"];
+                            $productImg = $row["Img_Product"];
+                            $productPrice = $row["Price_Product"];
+                            $productQuantity = $row["Quantity"];
+            
+                            echo "<div class='product'>";
+                                echo "<img src='../" . $productImg . "' alt='Product Image'>";
+                                echo "<div class='info-cart-product'>";
+                                    echo "<p class='title-product'>" . $productName . "</p>";
+                                    echo "<p class='price-product'>R$" . $productPrice . "</p>";
+                                    echo "<p class='quantity-product'>Quantidade: " . $productQuantity . "</p>";
+                                echo "</div>"; 
+                            echo "</div>";
+                            $totalShopping += $productPrice * $productQuantity;
+                        }
+                        $totalFormat = number_format($totalShopping, 2, ',', '.');
                         echo "</div>";
-                        $totalShopping += $productPrice * $productQuantity;
-                    }
-
-                    echo $totalShopping;
+                        echo "<div class='total-cart'>";
+                            echo "<p class='total-price'>Total: R$". $totalFormat ."</p>";
+                            echo "<div class='grp-btn'>";
+                                echo "<div class='complete-purchase'>";
+                                    echo "<p>Concluir compra</p>";
+                                echo "</div>";
+                                echo "<div class='btn-clear-cart'>";
+                                    echo "<p>Limpar carrinho</p>";
+                                echo "</div>";
+                            echo "</div>";
+                        echo "</div>";
                 } else {
                     echo "Nenhum produto no carrinho.";
                 }

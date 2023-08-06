@@ -1,0 +1,130 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');/*font-family: 'Roboto Condensed', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');/*font-family: 'Oswald', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');/*font-family: 'Josefin Sans', sans-serif*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');/*font-family: 'Raleway', sans-serif;*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr;
+    justify-content: space-around;
+}
+
+.product{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    width: 98%;
+}
+
+.product img{
+    width: 25%;
+    mix-blend-mode: multiply;
+}
+
+.title-product{
+    font-family: 'REM', sans-serif;
+    text-align: left;
+    font-size: 1.5rem;
+    padding-top: 1.2vh;
+}
+
+.subtitle-price{
+    margin-top: 25px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.price-product{
+    padding-bottom: 1vh;
+    margin-top: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.quantity-product{
+    padding-bottom: 1vh;
+    margin-top: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.total-products{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.total-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 95%;
+    height: 10% ;
+    margin-left: 5px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: #f7f2f2;
+    
+}
+
+.total-price{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    margin: 1vh 0px 0px 10px;
+}
+
+.grp-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+    gap:15px;
+}
+
+.complete-purchase{
+    background-color: #2b80ff62;
+    width: 125px;
+    padding: 1vh 0px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.complete-purchase:hover{
+    background-color:#2b80ff ;
+    transition: .3s;
+}
+
+.btn-clear-cart{
+    background-color: #ff2b2ba8;
+    width: 125px;
+    padding: 1vh 0px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-clear-cart:hover{
+    background-color:#ff2b2b;
+    transition: .3s;
+}
