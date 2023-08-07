@@ -62,7 +62,7 @@
                 </li>
                 <li class="dropdown"><a href="../.././Controllers/Loggout.php">Sair da Conta</a> </li>
                 <li class="dropdown">
-                    <a href="">
+                    <a href="../View/Users/ShoppingCart.php">
                         <i class="fas fa-shopping-cart"></i>
                         <?php
                             if(isset($_SESSION["idUser"])){

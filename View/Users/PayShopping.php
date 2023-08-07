@@ -1,5 +1,5 @@
 <?php
-    require_once "Config/Conexao.php";
+    require_once "../../Config/Conexao.php";
 
     session_start();
     $idClient = null;
@@ -17,16 +17,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cube Place</title>
-    <link rel="stylesheet" href="./Styles/header.css">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../Styles/header.css">
+    <link rel="stylesheet" href="../../Styles/cart.css">
+    <link rel="stylesheet" href="../../Styles/payment.css">
+    <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
 
 </head>
 <body>
     <header class="header">
-        <a href="index.php"><img src="./Images/logo-cube-place.png" alt="Logo"></a>
+        <a href="../../index.php"><img src="../../Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
-                <li class="dropdown"><a href="./public/Produtos.php">Todos</a></li>
+                <li class="dropdown"><a href="../../public/Produtos.php">Todos</a></li>
                 <li class="dropdown">
                     <a href="#">Cubos</a>
                     <ul class="dropdown-content">
@@ -64,32 +66,30 @@
                 <li class="dropdown">
                     <?php
                         if(isset($_SESSION["idUser"])){
-                            echo "<li class='dropdown'><a href='Controllers/Loggout.php'>Sair da Conta</a></li>";
+                            echo "<li class='dropdown'><a href='../../Controllers/Loggout.php'>Sair da Conta</a></li>";
                         }else{
                             echo "<a href=''>Minha Conta</a>";
                             echo "<ul class='dropdown-content'>";
-                                echo "<li><a href='./public/Entrar.php'>Acessar conta</a></li>";
-                                echo "<li><a href='./public/Registrar.php'>Criar conta</a></li>";
+                                echo "<li><a href='../../public/Entrar.php'>Acessar conta</a></li>";
+                                echo "<li><a href='../../public/Registrar.php'>Criar conta</a></li>";
                             echo "</ul>";
                         }
                     ?>
                 </li>
                 <li class="dropdown">
-                    <a href="View/Users/ShoppingCart.php">
+                    <a href="">
                         <i class="fas fa-shopping-cart"></i>
                         <?php
                             if(isset($_SESSION["idUser"])){
-                                $sql = "SELECT COUNT(*) FROM shopping_cart WHERE  Id_Client = $idClient";
+                                $sql = "SELECT COUNT(*) FROM shopping_cart WHERE Id_Client = $idClient";
                                 $result = $conn->query($sql);
                                 
-                                if ($result) {
+                             
                                     $row = $result->fetch_assoc();
                                     $quantProd = $row["COUNT(*)"];
                                     
                                     echo  $quantProd ;
-                                } else {
-                                    echo 0;
-                                }
+                    
                             }else{
                                 echo 0;
                             }
@@ -100,13 +100,56 @@
         </nav>
     </header>
     <section>
-        <?php
-            if(isset($_SESSION["nameUser"])){
-                echo "<p>Bem-vindo " . $nameUser . "</p>"; 
-            }else{
-                echo "<p>Bem-vindo</p>";
-            }
-        ?>
+        <div class="payment-area">
+            <?php
+                require_once "../../Controllers/DisplayCart.php";
+                $totalShopping = 0.00;
+                $totalProductsText = "<div class='container-products'>";
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $productPrice = $row["Price_Product"];
+                        $productName = $row["Name_Product"];
+                        $productQuantity = $row["Quantity"];
+                        $totalShopping += $productPrice * $productQuantity;
+                        $totalProductsText .= "<p class='text-prod'>" .$productName . "             x" .$productQuantity ."</p>";
+                    }
+                    $totalProductsText .= "</div>";
+                }
+            ?>
+
+            <div class="container-payment">
+                <?php
+                    $totalFormat = number_format($totalShopping, 2, ',', '.'); 
+                    echo "<div class='price-cart'><p>Valor total: <br>R$" . $totalFormat . "</p></div>"; 
+                ?>
+
+                <div class="grp-radio-btn">
+                    <p>Selecione a sua opção de pagamento</p>
+                    <input type="radio" name="payment" id="pay-card">
+                    <label for="pay-card">Cartão de crédito</label>
+                    <br>
+                    
+                    <input type="radio" name="payment" id="pay-boleto">
+                    <label for="pay-boleto">Boleto</label>
+                    <br>
+                    
+                    <input type="radio" name="payment" id="pay-pix">
+                    <label for="pay-pix">Pix</label>
+                    <br>
+                </div>
+
+                <div class="products-text">
+                    <p class="products-title">Itens</p>
+                    <?php
+                        echo $totalProductsText;
+                    ?>
+                </div>
+
+                <div class='complete-purchase'>
+                    <a href='../../Controllers/CleanCart.php'>Concluir compra</a>
+                </div>;
+            </div>
+        </div>
     </section>
 </body>
 </html>

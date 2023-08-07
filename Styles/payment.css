@@ -1,0 +1,74 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');/*font-family: 'Josefin Sans', sans-serif*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.payment-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    width: 50%;
+    padding: 2%;
+    border-radius: 10%;
+    border: 2px solid black;
+}
+
+.container-products{
+    padding-top: .6vh;
+}
+
+.text-prod{
+    padding-top: 1vh;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color:#0000009d
+}
+
+.price-cart,.grp-radio-btn,.products-text,.complete-purchase{
+    margin-top: 3vh;
+}
+
+.grp-radio-btn p{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+}
+
+.products-title{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    
+}
+
+.price-cart{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.8rem;
+}
+
+.grp-radio-btn{
+    padding: 50px;
+    border: 2px solid #504e4e;
+    border-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.grp-radio-btn input{
+    margin-top: 5px;
+}
+
+.products-text{
+    padding: 50px;
+    border: 2px solid #504e4e;
+    border-radius: 10px;
+}

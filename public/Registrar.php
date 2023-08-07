@@ -56,11 +56,6 @@
                         <li><a href="./Registrar.php">Criar conta</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                </li>
             </ul>
         </nav>
     </header>

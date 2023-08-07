@@ -1,5 +1,5 @@
 <?php
-    require_once "../../Config/Conexao.php";
+    require_once "../Config/Conexao.php";
 
     session_start();
     $idClient = null;
@@ -71,7 +71,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="">
+                    <a href="../View/Users/ShoppingCart.php">
                         <i class="fas fa-shopping-cart"></i>
                         <?php
                             if(isset($_SESSION["idUser"])){

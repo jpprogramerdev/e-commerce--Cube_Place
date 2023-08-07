@@ -74,17 +74,16 @@ section{
     flex-direction: column;
     border: 2px solid black;
     width: 95%;
-    height: 10% ;
+    height: auto;
     margin-left: 5px;
     border-radius: 15px;
     margin-top: 20px;
     background-color: #f7f2f2;
-    
 }
 
 .total-price{
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     margin: 1vh 0px 0px 10px;
 }
 
@@ -127,4 +126,9 @@ section{
 .btn-clear-cart:hover{
     background-color:#ff2b2b;
     transition: .3s;
+}
+
+.btn-clear-cart a,.complete-purchase a{
+    text-decoration: none;
+    color: #000;
 }

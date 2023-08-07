@@ -65,7 +65,7 @@
                 <li class="dropdown">
                     <?php
                         if(isset($_SESSION["idUser"])){
-                            echo "<li class='dropdown'><a href='Controllers/Loggout.php'>Sair da Conta</a></li>";
+                            echo "<li class='dropdown'><a href='../../Controllers/Loggout.php'>Sair da Conta</a></li>";
                         }else{
                             echo "<a href=''>Minha Conta</a>";
                             echo "<ul class='dropdown-content'>";
@@ -127,17 +127,18 @@
                             echo "<p class='total-price'>Total: R$". $totalFormat ."</p>";
                             echo "<div class='grp-btn'>";
                                 echo "<div class='complete-purchase'>";
-                                    echo "<p>Concluir compra</p>";
+                                    echo "<a href='PayShopping.php'>Concluir compra</a>";
                                 echo "</div>";
                                 echo "<div class='btn-clear-cart'>";
-                                    echo "<p>Limpar carrinho</p>";
+                                    echo "<a href='#' id='clearBtn'>Limpar carrinho</a>";
                                 echo "</div>";
                             echo "</div>";
                         echo "</div>";
                 } else {
-                    echo "Nenhum produto no carrinho.";
+                    echo "<p class='total-price'>Nenhum produto no carrinho.</p>";
                 }
             ?> 
     </section>
+    <script src="../../Scripts/AlertClearCart.js"></script>
 </body>
 </html>
