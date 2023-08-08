@@ -24,8 +24,8 @@
     <title>Cube Place - Produtos</title>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.php"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
+<header class="header">
+        <a href="../../index.php"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="">Todos</a></li>
@@ -64,14 +64,19 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="">Minha Conta</a>
-                    <ul class="dropdown-content">
-                        <li><a href="./Entrar.php">Acessar conta</a></li>
-                        <li><a href="./Registrar.php">Criar conta</a></li>
-                    </ul>
-                </li>
+                    <?php
+                        if(isset($_SESSION["idUser"])){
+                            echo "<li class='dropdown'><a href='../Controllers/Loggout.php'>Sair da Conta</a></li>";
+                        }else{
+                            echo "<a href=''>Minha Conta</a>";
+                            echo "<ul class='dropdown-content'>";
+                                echo "<li><a href='Entrar.php'>Acessar conta</a></li>";
+                                echo "<li><a href='Registrar.php'>Criar conta</a></li>";
+                            echo "</ul>";
+                        }
+                    ?>
                 <li class="dropdown">
-                    <a href="../View/Users/ShoppingCart.php">
+                    <a href="../Users/ShoppingCart.php">
                         <i class="fas fa-shopping-cart"></i>
                         <?php
                             if(isset($_SESSION["idUser"])){

@@ -26,7 +26,7 @@
         <a href="index.php"><img src="./Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
-                <li class="dropdown"><a href="./public/Produtos.php">Todos</a></li>
+                <li class="dropdown"><a href="./View/Adm/Produtos.php">Todos</a></li>
                 <li class="dropdown">
                     <a href="#">Cubos</a>
                     <ul class="dropdown-content">

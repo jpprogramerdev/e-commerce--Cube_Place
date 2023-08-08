@@ -31,7 +31,7 @@
 
 .add-product:hover{ 
     transition: .3s;
-    background-color:#150075b4;
+    background-color:#216bcc;;
 }
 
 .container-product{
@@ -48,6 +48,10 @@
     background-color: #faf5f5;
     transition: transform 0.3s ease-in-out;
     margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .product:hover{
@@ -57,9 +61,29 @@
     z-index: 1;
 }
 
+.icon-edit{
+    margin: 10px;
+}
+
+.icon-edit a{
+    margin: 10px;
+    font-size:1.5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.icon-edit a:hover{
+    transition: .3s;
+    color: #216bcc;
+}
+
+.icon-edit a.trash-item:hover{
+    color:#ff3636
+}
+
 .product img{
     margin-top: 5px;
-    width: 90%;
+    width: 200px;
     mix-blend-mode: multiply;
 }
 

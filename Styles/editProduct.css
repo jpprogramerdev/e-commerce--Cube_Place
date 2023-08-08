@@ -1,0 +1,93 @@
+/*Fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');/*font-family: 'Josefin Sans', sans-serif*/
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@900&display=swap');/*font-family: 'REM', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');/*font-family: 'Montserrat', sans-serif;*/
+
+:root{
+    --background-btn:#aa0030;
+    --background-btn-hover:#8b0028;
+}
+
+section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-order{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    border: 2px solid #000;
+    width: 50%;
+    padding: 20px;
+    border-radius: 10%;
+}
+
+.titleForm{
+    font-family: 'Tilt Neon', cursive;
+    font-size: 2rem;
+}
+
+label{
+    font-family: 'Tilt Neon', cursive;
+    color: #000000;
+    margin-top: 1vh;
+}
+
+input[type="text"],input[type="number"],select{
+    font-family: 'Tilt Neon', cursive;
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+    border: 1px solid black
+}
+
+textarea{
+    font-family: 'Tilt Neon', cursive;
+}
+
+label.input-file{
+    padding: 10px 5px;
+    width: 150px;
+    background-color: var(--background-btn);
+    color: #000;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 25px 0px;border-radius: 25px 0px;
+    transition: .2s;
+}
+
+label.input-file:hover{
+    transition: .2s;
+    background-color: var(--background-btn-hover);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button.sendData{
+    font-family: 'Inconsolata', monospace;
+    margin-top: 2rem;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 25px 0px;
+    background-color: var(--background-btn);
+    cursor: pointer;
+    transition: .2s;
+    border: 0px solid transparent;
+}
+
+button.sendData:hover{
+    transition: .2s;
+    color: #000000;
+    filter: brightness(0.7); 
+}
+

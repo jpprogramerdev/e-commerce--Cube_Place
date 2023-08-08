@@ -1,5 +1,7 @@
 <?php
     require_once "../../Config/Conexao.php";
+    require_once "../../Controllers/GetProduct.php";
+
 
     session_start();
     $idClient = $_SESSION["idUser"];
@@ -16,8 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../.././Styles/header.css">
-    <link rel="stylesheet" href="../.././Styles/windowsModal.css">
-    <link rel="stylesheet" href="../.././Styles/product.css">
+    <link rel="stylesheet" href="../.././Styles/editProduct.css">
     <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
     <title>Cube Place - Produtos</title>
 </head>
@@ -88,104 +89,54 @@
             </ul>
         </nav>
     </header>
-    
     <section>
-        <div class="btn-add-prod">
-            <button class='add-product' type='button' id='add_product'>+</button>
-        </div>
-
-        <div class="container-product">
-            <?php
-                require_once "DisplayProduct.php";
-                
-                while ($row = mysqli_fetch_assoc($result)) {
-                    $productId = $row["ID_Product"];
-                    echo"<div class='product'>";
-                        echo"<div class='icon-edit'>";
-                            echo "<a href='AtualizarProduto.php?id=$productId'><i class='fas fa-edit'></i></a>";
-                            echo "<a id='btn-trash'class='trash-item'><i class='fa-solid fa-trash'></i></a>";
-                        echo"</div>";
-                        echo"<a href='../../public/product_details.php?id=$productId'>";
-                            echo"<p class='title-product'>".$row["Name_Product"]."</p>";
-                            echo"<img src='../".$row["Img_Product"]."'>";
-                            echo"<p class='subtitle-price'>A partir de</p>";
-                            echo"<p class='price-product'>R$".$row["Price_Product"]."</p>";
-                        echo"</a>";
-                    echo"</div>";
-                }
-            ?>
-        </div>
-    </section>
-
-    <div class="link-pages">
-        <?php 
-            require_once "DisplayProduct.php";
-            for ($i = 1; $i <= $totalPages; $i++) {
-                echo "<a href='Produtos.php?page=$i'>$i</a> ";
-            }
-        ?>
-    </div>
-
-    <!--Janela modal do formulário para adicionar produto//Modal window of the form to add product-->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="modalClose">&times;</span>
-            <form method="POST" action="../../Controllers/SetProduct.php" class="form-order"  enctype="multipart/form-data">
-                <span class="titleForm"> Adicionar produto </span>
+        <form method="POST" action="../../Controllers/UpdateProduct.php" class="form-order"  enctype="multipart/form-data">
+                <span class="titleForm"> Editar produto </span>
                 <label class="formModal" for="name">Nome: </label>
-                <input type="text" name="name_product" id="name_product" required>
+                <input type="text" name="name_product" id="name_product" value= "<?php echo $productData["Name_Product"] ?>"required>
 
                 <label for="type_product">Tipo do produto: </label>
                 <select name="type_product" id="type_product" required>
-                    <option value="1">3x3x3</option>
-                    <option value="2">2X2X2</option>
-                    <option value="3">4X4X4</option>
-                    <option value="4">5x5x5</option>
-                    <option value="5">6x6x6</option>
-                    <option value="6">7x7x7</option>
-                    <option value="7">Skewb</option>
-                    <option value="8">Pyraminx</option>
-                    <option value="9">Square-1</option>
-                    <option value="10">Megaminx</option>
-                    <option value="11">Clock</option>
-                    <option value="12">Lubrificantes</option>
-                    <option value="13">Suportes</option>
-                    <option value="14">Bolsa</option>
-                    <option value="15">Timer</option>
-                    <option value="16">Tapetes</option>
-                    <option value="17">Cover</option>
+                    <option value="1" <?php if($productData['Type_Product'] == 1) echo 'selected'; ?>>3x3x3</option>
+                    <option value="2" <?php if($productData['Type_Product'] == 2) echo 'selected'; ?>>2X2X2</option>
+                    <option value="3" <?php if($productData['Type_Product'] == 3) echo 'selected'; ?>>4X4X4</option>
+                    <option value="4" <?php if($productData['Type_Product'] == 4) echo 'selected'; ?>>5x5x5</option>
+                    <option value="5" <?php if($productData['Type_Product'] == 5) echo 'selected'; ?>>6x6x6</option>
+                    <option value="6" <?php if($productData['Type_Product'] == 6) echo 'selected'; ?>>7x7x7</option>
+                    <option value="7" <?php if($productData['Type_Product'] == 7) echo 'selected'; ?>>Skewb</option>
+                    <option value="8" <?php if($productData['Type_Product'] == 8) echo 'selected'; ?>>Pyraminx</option>
+                    <option value="9" <?php if($productData['Type_Product'] == 9) echo 'selected'; ?>>Square-1</option>
+                    <option value="10" <?php if($productData['Type_Product'] == 10) echo 'selected'; ?>>Megaminx</option>
+                    <option value="11" <?php if($productData['Type_Product'] == 11) echo 'selected'; ?>>Clock</option>
+                    <option value="12" <?php if($productData['Type_Product'] == 12) echo 'selected'; ?>>Lubrificantes</option>
+                    <option value="13" <?php if($productData['Type_Product'] == 13) echo 'selected'; ?>>Suportes</option>
+                    <option value="14" <?php if($productData['Type_Product'] == 14) echo 'selected'; ?>>Bolsa</option>
+                    <option value="15" <?php if($productData['Type_Product'] == 15) echo 'selected'; ?>>Timer</option>
+                    <option value="16" <?php if($productData['Type_Product'] == 16) echo 'selected'; ?>>Tapetes</option>
+                    <option value="17" <?php if($productData['Type_Product'] == 17) echo 'selected'; ?>>Cover</option>
                 </select>
 
+
                 <label class="formModal" for="price_product">Preço: </label>
-                <input type="number" id="price_product" name="price_product" required>
+                <input type="number" id="price_product" name="price_product" value= "<?php echo $productData["Price_Product"] ?>"  required>
 
                 <label class="formModal" for="description_product">Descrição: </label>
-                <textarea name="description_product" id="description_product" cols="30" rows="10" required></textarea>
+                <textarea name="description_product" id="description_product" cols="30" rows="10" required><?php echo $productData["Description_Product"]; ?></textarea>
                 
                 <label for="image_product">Imagem do produto: </label>
                 <label for="image_product" class="input-file">Enviar imagem </label>
-                <input type="file" name="image_product" id="image_product" accept=".jpg, .jpeg, .png" required>
+                <input type="file" name="image_product" id="image_product" accept=".jpg, .jpeg, .png" value= "<?php echo $productData["Img_Product"] ?>"required>
 
                 <label class="formModal" for="quantity_product">Quantidade no estoque: </label>
-                <input type="number" id="quantity_product" name="quantity_product" required>
+                <input type="number" id="quantity_product" name="quantity_product" value= "<?php echo $productData["Quantity_Product"] ?>" required>
 
                 <label class="formModal" for="price_product">Marca: </label>
-                <input type="text" id="brand_name" name="brand_name" required>
+                <input type="text" id="brand_name" name="brand_name" value= "<?php echo $productData["Brand_Product"] ?>" required>
+                
+                <input type="hidden" name="product_id" value="<?php echo $productData["ID_Product"]; ?>">
 
                 <button type="submit" class="sendData" id="send-data">Enviar</button>
             </form>
-        </div>
-    </div>
-
-    <script src= "../.././Scripts/windowsModal.js"></script>
-    <script src="../.././Scripts/AlertSucess.js"></script>
-
-    <script>
-        document.getElementById('btn-trash').addEventListener('click', function() {
-        let btnConfirm = confirm("Deseja realmente deletar o produto?")
-        if (btnConfirm) {
-            window.location.href = '../../Controllers/DeleteProduct.php?id=<?php echo $productId?>'
-        }})
-</script>
-</body>
+        </section>
+    </body>
 </html>
