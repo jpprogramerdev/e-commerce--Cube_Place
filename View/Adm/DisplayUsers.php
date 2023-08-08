@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../.././Styles/header.css">
     <link rel="stylesheet" href="../.././Styles/tableUser.css">
     <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
-    <title>Cube Place - Produtos</title>
+    <title>Cube Place - Usuários</title>
 </head>
 <body>
     <header class="header">

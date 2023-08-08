@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cube Place</title>
+    <title>Cube Place - Carrinho</title>
     <link rel="stylesheet" href="../../Styles/header.css">
     <link rel="stylesheet" href="../../Styles/cart.css">
     <link rel="stylesheet" href="../../fontawesome/css/all.min.css">

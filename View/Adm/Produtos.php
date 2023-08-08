@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../.././Styles/windowsModal.css">
     <link rel="stylesheet" href="../.././Styles/product.css">
     <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
-    <title>Cube Place - Produtos</title>
+    <title>Cube Place - Todo os produtos</title>
 </head>
 <body>
     <header class="header">

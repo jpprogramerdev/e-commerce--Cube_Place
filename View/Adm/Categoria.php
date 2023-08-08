@@ -3,10 +3,15 @@
 
     session_start();
     $idClient = $_SESSION["idUser"];
+    $categoria =  $_GET["categoria"];
     if (!isset($_SESSION["typeUser"]) || $_SESSION["typeUser"] != 1) {
         header("Location: ../../public/Produtos.php");
         exit();
     }
+
+    $sqlNameCategory = "SELECT * FROM type_of_product WHERE ID_Type_Product = $categoria";
+    $resultName = mysqli_query($conn, $sqlNameCategory);
+    $nameCategory =  mysqli_fetch_assoc($resultName);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +24,7 @@
     <link rel="stylesheet" href="../.././Styles/windowsModal.css">
     <link rel="stylesheet" href="../.././Styles/product.css">
     <link rel="stylesheet" href="../../fontawesome/css/all.min.css">
-    <title>Cube Place - Produtos</title>
+    <title>Cube Place - <?php echo $nameCategory["Name_Type_Product"]?></title>
 </head>
 <body>
     <header class="header">
