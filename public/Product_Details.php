@@ -142,7 +142,7 @@
     </section>
     
     <footer class="footer">
-            <p>Copyright © 2023 João Pedro Gerotto Fernandes - Todos os  direitos  reservados </p>
+        <p>Copyright © 2023 J.P.G. Fernandes - Todos os  direitos  reservados </p>
     </footer>
     <script>
        document.getElementById('btn-cart').addEventListener('click', function(event) {

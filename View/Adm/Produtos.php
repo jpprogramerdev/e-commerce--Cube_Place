@@ -131,7 +131,7 @@
     </div>
 
     <footer class="footer">
-            <p>Copyright © 2023 João Pedro Gerotto Fernandes - Todos os  direitos  reservados </p>
+        <p>Copyright © 2023 J.P.G. Fernandes - Todos os  direitos  reservados </p>
     </footer>
 
     <!--Janela modal do formulário para adicionar produto//Modal window of the form to add product-->

@@ -126,7 +126,7 @@
                     echo"</div>";
                 }
             }else{
-                echo"<p class='title-price'>Nenhum produto nessa categoria </p>";
+                echo"<p class='title-product'>Nenhum produto nessa categoria </p>";
             }
             ?>     
         </div>
@@ -140,7 +140,7 @@
         </div>
     </section>
     <footer class="footer">
-            <p>Copyright © 2023 João Pedro Gerotto Fernandes - Todos os  direitos  reservados </p>
+        <p>Copyright © 2023 J.P.G. Fernandes - Todos os  direitos  reservados </p>
     </footer>
 </body>
 </html>

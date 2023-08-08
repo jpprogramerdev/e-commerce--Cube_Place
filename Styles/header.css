@@ -1,6 +1,6 @@
 /*Fontes*/
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');/*font-family: 'Josefin Sans', sans-serif;*/
-
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@900&display=swap');/*font-family: 'REM', sans-serif;*/
 body{
     background-color: white;
 }
@@ -131,9 +131,10 @@ section{
     align-items: center;
     justify-content: center;
     background-color: var(--background-header);
-    padding: 2%;
+    padding: 1%;
     color: var(--text);
     font-family: 'Kanit', sans-serif;
+    font-size: 10px;
 }
 
 @keyframes slide-down {
@@ -145,4 +146,17 @@ section{
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.title-index{
+    font-family: 'REM', sans-serif;
+    font-size: 2rem;
+}
+
+.index{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
