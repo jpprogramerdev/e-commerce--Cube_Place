@@ -137,5 +137,9 @@
                 <button type="submit" class="sendData" id="send-data">Enviar</button>
             </form>
         </section>
+
+        <footer class="footer">
+            <p>Copyright © 2023 João Pedro Gerotto Fernandes - Todos os  direitos  reservados </p>
+        </footer>
     </body>
 </html>

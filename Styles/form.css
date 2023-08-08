@@ -20,7 +20,6 @@ p.title-form{
 }
 
 form{
-    margin-top: 1.5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

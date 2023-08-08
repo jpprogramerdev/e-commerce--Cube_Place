@@ -49,6 +49,13 @@
                         <li><a href="Categoria.php?categoria=17">Cover</a></li>
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="">Minha conta</a>
+                    <ul class='dropdown-content'>
+                        <li><a href='Entrar.php'>Acessar conta</a></li>
+                        <li><a href='Registrar.php'>Criar conta</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -67,6 +74,8 @@
         </form>
     </section>
 
-    
+    <footer class="footer">
+            <p>Copyright © 2023 João Pedro Gerotto Fernandes - Todos os  direitos  reservados </p>
+    </footer>
 </body>
 </html>

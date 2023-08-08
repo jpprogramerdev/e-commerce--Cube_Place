@@ -76,6 +76,9 @@
         </form>
     </section>
 
+    <footer class="footer">
+            <p>Copyright © 2023 João Pedro Gerotto Fernandes - Todos os  direitos  reservados </p>
+    </footer>
     <script src=".././Scripts/verifyPassword.js"></script>
     <script src=".././Scripts/verifyCPF.js"></script>
 </body>

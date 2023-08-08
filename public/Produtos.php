@@ -25,7 +25,7 @@
 </head>
 <body>
 <header class="header">
-        <a href="../../index.php"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
+        <a href="../index.php"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="./View/Adm/Produtos.php">Todos</a></li>
@@ -127,5 +127,8 @@
             ?>
         </div>
     </section>
+    <footer class="footer">
+            <p>Copyright © 2023 João Pedro Gerotto Fernandes - Todos os  direitos  reservados </p>
+    </footer>
 </body>
 </html>

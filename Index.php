@@ -102,11 +102,17 @@
     <section>
         <?php
             if(isset($_SESSION["nameUser"])){
-                echo "<p>Bem-vindo " . $nameUser . "</p>"; 
+                echo "<p>Bem-vindo " . $nameUser . "</p>";
             }else{
                 echo "<p>Bem-vindo</p>";
             }
+            echo "<p>A melhor loja de cubos magicos do Brasil</p>";
+            
         ?>
     </section>
+
+    <footer class="footer">
+            <p>Copyright © 2023 João Pedro Gerotto Fernandes - Todos os  direitos  reservados </p>
+    </footer>
 </body>
 </html>
