@@ -2,26 +2,16 @@
     require_once "../Config/Conexao.php";
 
     session_start();
+    $idClient = null;
+    $nameUser = null;
     
-    if (isset($_GET['id'])) {
-        $productId = $_GET['id'];
-        if(isset($_SESSION["idUser"])){
-            $idClient = $_SESSION["idUser"];
-        }    
-        $sql = "SELECT * FROM products WHERE ID_Product = $productId";
-        $result = mysqli_query($conn, $sql);
 
-        if ($result && mysqli_num_rows($result) > 0) {
-            $product = mysqli_fetch_assoc($result);
-        } else {
-            echo "Produto não encontrado.";
-            exit();
-        }
-    } else {
-        echo "ID do produto não especificado.";
-        exit();
+    if (isset($_SESSION["typeUser"])) {
+        $idClient =  $_SESSION["idUser"];
+        $nameUser = $_SESSION["nameUser"];
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,16 +19,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Styles/header.css">
-    <link rel="stylesheet" href="../Styles/productDetails.css">
+    <link rel="stylesheet" href=".././Styles/header.css">
+    <link rel="stylesheet" href=".././Styles/windowsModal.css">
+    <link rel="stylesheet" href=".././Styles/product.css">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
-    <?php
-        echo"<title>Cube Place - ".$product["Name_Product"]."</title>"
-    ?>
+    <title>Cube Place - Produtos</title>
 </head>
 <body>
-    <header class="header">
-        <a href="../index.php"><img src="../Images/logo-cube-place.png" alt="Logo"></a>
+<header class="header">
+        <a href="../index.php"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
                 <li class="dropdown"><a href="./View/Adm/Produtos.php">Todos</a></li>
@@ -83,13 +72,13 @@
                         }else{
                             echo "<a href=''>Minha Conta</a>";
                             echo "<ul class='dropdown-content'>";
-                                echo "<li><a href='./public/Entrar.php'>Acessar conta</a></li>";
-                                echo "<li><a href='./public/Registrar.php'>Criar conta</a></li>";
+                                echo "<li><a href='Entrar.php'>Acessar conta</a></li>";
+                                echo "<li><a href='Registrar.php'>Criar conta</a></li>";
                             echo "</ul>";
                         }
                     ?>
                 <li class="dropdown">
-                    <a href="../View/Users/ShoppingCart.php">
+                    <a href="../Users/ShoppingCart.php">
                         <i class="fas fa-shopping-cart"></i>
                         <?php
                             if(isset($_SESSION["idUser"])){
@@ -104,6 +93,8 @@
                                 } else {
                                     echo 0;
                                 }
+                            }else{
+                                echo 0;
                             }
                         ?>
                     </a>
@@ -111,47 +102,37 @@
             </ul>
         </nav>
     </header>
-
+    
     <section>
-        <div class="img-info">
-            <div class="img-product">
-                <?php
-                    echo "<img src='" .$product["Img_Product"]."'>";
-                ?>
-            </div>
-            <div class="info-product">
-                <?php
-                    echo "<p class='name-product'>".$product["Name_Product"]."</p>";
-                    echo "<p class='brand-product'>".$product["Brand_Product"]."</p>";
-                    echo "<p class='price-product'>R$ ".$product["Price_Product"]."</p>";
-                    echo "<form action='../Controllers/AddInCart.php' method='GET' class='prod-form'>";
-                        echo "<label for='quantity_prod'>Quantidade:</label>";
-                        echo "<input type='number' name='quantity_prod' id='quantity_prod' value='1' step='1'>";
-                        echo "<input type='hidden' name='id' value='$productId'>";
-                        echo "<button type='submit' class='link-add-cart' id='btn-cart'>";
-                            echo "<div class='add-item-cart'>";
-                                echo "<p>Adicionar ao carrinho</p>";
-                            echo "</div>";
-                        echo "</button>";
-                    echo "</form>";
-                    echo "<p class='description-title'>Descrição</p>";
-                    echo "<p class='description-product'>".$product["Description_Product"]."</p>";
-                ?>
-            </div>
-        </div>
-    </section>
-
-    <script>
-       document.getElementById('btn-cart').addEventListener('click', function(event) {
+        <div class="container-product">
             <?php
-                if (isset($_SESSION["idUser"])) {
-                    echo "return";
-                } else {
-                    echo "event.preventDefault()";
-                    echo "window.location.href = '../public/Entrar.php'";
+                require_once "../Controllers/DisplayCategory.php";
+
+                if(mysqli_num_rows($result) > 0){
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $productId = $row["ID_Product"];
+                    echo"<div class='product'>";
+                        echo"<a href='product_details.php?id=$productId'>";
+                            echo"<p class='title-product'>".$row["Name_Product"]."</p>";
+                            echo"<img src='".$row["Img_Product"]."'>";
+                            echo"<p class='subtitle-price'>A partir de</p>";
+                            echo"<p class='price-product'>R$".$row["Price_Product"]."</p>";
+                        echo"</a>";
+                    echo"</div>";
+                }
+            }else{
+                echo"<p class='title-price'>Nenhum produto nessa categoria </p>";
+            }
+            ?>     
+        </div>
+        <div class="link-pages">
+            <?php 
+                require_once "../Controllers/DisplayCategory.php";
+                for ($i = 1; $i <= $totalPages; $i++) {
+                        echo "<a href='Produtos.php?page=$i'>$i</a> ";
                 }
             ?>
-        });
-    </script>
+        </div>
+    </section>
 </body>
 </html>

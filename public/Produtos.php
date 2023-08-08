@@ -28,39 +28,39 @@
         <a href="../../index.php"><img src=".././Images/logo-cube-place.png" alt="Logo"></a>
         <nav class="menu-header">
             <ul>
-                <li class="dropdown"><a href="">Todos</a></li>
+                <li class="dropdown"><a href="./View/Adm/Produtos.php">Todos</a></li>
                 <li class="dropdown">
                     <a href="#">Cubos</a>
                     <ul class="dropdown-content">
-                        <li><a href="">2x2x2</a></li>
-                        <li><a href="">3x3x3</a></li>
-                        <li><a href="">4x4x4</a></li>
-                        <li><a href="">5x5x5</a></li>
-                        <li><a href="">6x6x6</a></li>
-                        <li><a href="">7x7x7</a></li>
+                        <li><a href="Categoria.php?categoria=2">2x2x2</a></li>
+                        <li><a href="Categoria.php?categoria=1">3x3x3</a></li>
+                        <li><a href="Categoria.php?categoria=3">4x4x4</a></li>
+                        <li><a href="Categoria.php?categoria=4">5x5x5</a></li>
+                        <li><a href="Categoria.php?categoria=5">6x6x6</a></li>
+                        <li><a href="Categoria.php?categoria=6">7x7x7</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <a href="#">Outros</a>
                     <ul class="dropdown-content">
-                        <li><a href="">Skewb</a></li>
-                        <li><a href="">Pyraminx</a></li>
-                        <li><a href="">Square-1</a></li>
-                        <li><a href="">Megaminx</a></li>
-                        <li><a href="">Clock</a></li>
+                        <li><a href="Categoria.php?categoria=7">Skewb</a></li>
+                        <li><a href="Categoria.php?categoria=8">Pyraminx</a></li>
+                        <li><a href="Categoria.php?categoria=9">Square-1</a></li>
+                        <li><a href="Categoria.php?categoria=10">Megaminx</a></li>
+                        <li><a href="Categoria.php?categoria=11">Clock</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <a href="">Acessórios</a>
                     <ul class="dropdown-content">
-                        <li><a href="">Lubrificantes</a></li>
-                        <li><a href="">Suportes</a></li>
-                        <li><a href="">Bolsa</a></li>
-                        <li><a href="">Timer</a></li>
-                        <li><a href="">Tapes</a></li>
-                        <li><a href="">Cover</a></li>
+                        <li><a href="Categoria.php?categoria=12">Lubrificantes</a></li>
+                        <li><a href="Categoria.php?categoria=13">Suportes</a></li>
+                        <li><a href="Categoria.php?categoria=14">Bolsa</a></li>
+                        <li><a href="Categoria.php?categoria=15">Timer</a></li>
+                        <li><a href="Categoria.php?categoria=16">Tapes</a></li>
+                        <li><a href="Categoria.php?categoria=17">Cover</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

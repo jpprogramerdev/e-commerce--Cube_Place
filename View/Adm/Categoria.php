@@ -61,7 +61,18 @@
                         <li><a href="Categoria.php?categoria=17">Cover</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="../../Controllers/Loggout.php">Sair da Conta</a> </li>
+                <li class="dropdown">
+                    <?php
+                        if(isset($_SESSION["idUser"])){
+                            echo "<li class='dropdown'><a href='../../Controllers/Loggout.php'>Sair da Conta</a></li>";
+                        }else{
+                            echo "<a href=''>Minha Conta</a>";
+                            echo "<ul class='dropdown-content'>";
+                                echo "<li><a href='Entrar.php'>Acessar conta</a></li>";
+                                echo "<li><a href='Registrar.php'>Criar conta</a></li>";
+                            echo "</ul>";
+                        }
+                    ?>
                 <li class="dropdown">
                     <a href="../Users/ShoppingCart.php">
                         <i class="fas fa-shopping-cart"></i>
@@ -87,7 +98,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <section>
         <div class="btn-add-prod">
             <button class='add-product' type='button' id='add_product'>+</button>
@@ -95,7 +106,7 @@
 
         <div class="container-product">
             <?php
-                require_once "DisplayProduct.php";
+                require_once "DisplayCategory.php";
                 
                 if(mysqli_num_rows($result) > 0){
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -114,7 +125,7 @@
                         echo"</div>";
                     }
                 }else{
-                    echo"<p class='title-product'>Nenhum produto disponível</p>";
+                    echo"<p class='title-product'>Nenhum produto nessa categoria</p>";
                 }
             ?>
         </div>
@@ -122,7 +133,7 @@
 
     <div class="link-pages">
         <?php 
-            require_once "DisplayProduct.php";
+            require_once "DisplayCategory.php";
             for ($i = 1; $i <= $totalPages; $i++) {
                 echo "<a href='Produtos.php?page=$i'>$i</a> ";
             }
