@@ -103,7 +103,7 @@
                     echo"<div class='product'>";
                         echo"<div class='icon-edit'>";
                             echo "<a href='AtualizarProduto.php?id=$productId'><i class='fas fa-edit'></i></a>";
-                            echo "<a id='btn-trash'class='trash-item'><i class='fa-solid fa-trash'></i></a>";
+                            echo "<a name='btn-trash'class='trash-item' data-product-id='$productId'><i class='fa-solid fa-trash'></i></a>";
                         echo"</div>";
                         echo"<a href='../../public/product_details.php?id=$productId'>";
                             echo"<p class='title-product'>".$row["Name_Product"]."</p>";
@@ -181,11 +181,17 @@
     <script src="../.././Scripts/AlertSucess.js"></script>
 
     <script>
-        document.getElementById('btn-trash').addEventListener('click', function() {
-        let btnConfirm = confirm("Deseja realmente deletar o produto?")
-        if (btnConfirm) {
-            window.location.href = '../../Controllers/DeleteProduct.php?id=<?php echo $productId?>'
-        }})
-</script>
+       const deleteButtons = document.querySelectorAll('[name="btn-trash"]');
+
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                let productId = this.getAttribute('data-product-id');
+                let btnConfirm = confirm("Deseja realmente deletar o produto?");
+                if (btnConfirm) {
+                    window.location.href = `../../Controllers/DeleteProduct.php?id=${productId}`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
